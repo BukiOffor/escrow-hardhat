@@ -2,6 +2,8 @@ import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import deploy from './deploy';
 import Escrow from './Escrow';
+import { useMoralis } from 'react-moralis';
+
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -14,6 +16,7 @@ function App() {
   const [escrows, setEscrows] = useState([]);
   const [account, setAccount] = useState();
   const [signer, setSigner] = useState();
+  
 
   useEffect(() => {
     async function getAccounts() {

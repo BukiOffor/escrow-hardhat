@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { MoralisProvider } from "react-moralis"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,8 +15,11 @@ if (!window.ethereum) {
   );
 } else {
   root.render(
+   
     <React.StrictMode>
-      <App />
+       <MoralisProvider initializeOnMount={false}> 
+        <App />
+      </MoralisProvider>
     </React.StrictMode>
   );
 }
